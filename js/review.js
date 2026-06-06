@@ -1,7 +1,7 @@
 let rating = 0;
 
 const stars = document.querySelectorAll(".star");
-
+localStorage.removeItem("reviews");
 stars.forEach((star) => {
   star.addEventListener("click", () => {
     rating = star.dataset.value;
