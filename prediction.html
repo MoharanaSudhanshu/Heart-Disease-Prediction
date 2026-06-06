@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .prediction-section{
+            padding:120px 10%;
+            min-height:100vh;
+            background:#f8fbff;
+        }
+
+        .prediction-container{
+            max-width:1000px;
+            margin:auto;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,.08);
+        }
+
+        .prediction-title{
+            text-align:center;
+            margin-bottom:30px;
+            color:#e63946;
+        }
+
+        .form-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .input-group{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .input-group label{
+            margin-bottom:8px;
+            font-weight:500;
+        }
+
+        .input-group input,
+        .input-group select{
+            padding:12px;
+            border:1px solid #ddd;
+            border-radius:10px;
+            outline:none;
+        }
+
+        .predict-btn{
+            margin-top:30px;
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:10px;
+            background:#e63946;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        .predict-btn:hover{
+            opacity:.9;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">❤️ HeartAI</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prediction.html">Predict</a></li>
+    </ul>
+</nav>
+
+<section class="prediction-section">
+
+    <div class="prediction-container">
+
+        <h1 class="prediction-title">
+            Heart Disease Prediction
+        </h1>
+
+        <form id="predictionForm">
+
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" id="age" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Gender</label>
+                    <select id="sex">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Chest Pain Type</label>
+                    <input type="number" id="cp">
+                </div>
+
+                <div class="input-group">
+                    <label>Resting Blood Pressure</label>
+                    <input type="number" id="trestbps">
+                </div>
+
+                <div class="input-group">
+                    <label>Cholesterol</label>
+                    <input type="number" id="chol">
+                </div>
+
+                <div class="input-group">
+                    <label>Fasting Blood Sugar</label>
+                    <select id="fbs">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Rest ECG</label>
+                    <input type="number" id="restecg">
+                </div>
+
+                <div class="input-group">
+                    <label>Maximum Heart Rate</label>
+                    <input type="number" id="thalach">
+                </div>
+
+                <div class="input-group">
+                    <label>Exercise Induced Angina</label>
+                    <select id="exang">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Old Peak</label>
+                    <input type="number" step="0.1" id="oldpeak">
+                </div>
+
+                <div class="input-group">
+                    <label>Slope</label>
+                    <input type="number" id="slope">
+                </div>
+
+                <div class="input-group">
+                    <label>CA</label>
+                    <input type="number" id="ca">
+                </div>
+
+                <div class="input-group">
+                    <label>Thal</label>
+                    <input type="number" id="thal">
+                </div>
+
+            </div>
+
+            <button class="predict-btn" type="submit">
+                Predict Heart Disease
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="js/prediction.js"></script>
+
+</body>
+</html>
