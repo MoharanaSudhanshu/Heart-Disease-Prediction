@@ -19,19 +19,28 @@ document
       thal: Number(thal.value),
     };
 
-    const response = await https://heart-disease-prediction-wixh.onrender.com, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(patientData),
-    });
+    const response = await fetch(
+      "https://heart-disease-prediction-wixh.onrender.com/predict",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(patientData),
+      }
+    );
 
     const result = await response.json();
 
-    localStorage.setItem("predictionResult", JSON.stringify(result));
+    localStorage.setItem(
+      "predictionResult",
+      JSON.stringify(result)
+    );
 
-    localStorage.setItem("patientData", JSON.stringify(patientData));
+    localStorage.setItem(
+      "patientData",
+      JSON.stringify(patientData)
+    );
 
     window.location.href = "result.html";
   });
