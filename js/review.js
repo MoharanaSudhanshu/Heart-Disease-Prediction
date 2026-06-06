@@ -97,3 +97,5 @@ HeartAI System
 
   a.click();
 }
+localStorage.clear();
+location.reload();
